@@ -109,8 +109,15 @@ public class LinkedListDeque<T> {
         return ptr.items;
     }
 
+
     public T getRecursive(int index){
-        return null;
+        if(index < 0 || index >this.size()){
+            return null;
+        } else if (index==0) {
+            return this.sentinel_head.next.items;
+        }
+        this.removeFirst();
+        return getRecursive(index-1);
     }
 
 
