@@ -32,8 +32,6 @@ public class NBody {
         String filename = args[2];
         double radius = readRadius(filename);
         Planet[] planets = readPlanets(filename);
-        String music = "audio/2001.mid";
-        StdAudio.play(music);
         StdDraw.setScale(-radius,radius);
         StdDraw.clear();
         String background = "./images/starfield.jpg";
