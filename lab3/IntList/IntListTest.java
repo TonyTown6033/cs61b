@@ -66,8 +66,9 @@ public class IntListTest {
         assertEquals(IntList.of(1, 2, 3), A);
     }
 
-    public static IntList reverse(IntList A){
-
+    @Test
+    public IntList testReverse(IntList A){
+        
     }
 
     /** If you're running this from the command line, you'll need
