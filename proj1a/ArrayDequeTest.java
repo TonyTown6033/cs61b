@@ -53,5 +53,15 @@ public class ArrayDequeTest {
         }
     }
 
+    @Test
+    public void test1(){
+        ArrayDeque<Integer> p = new ArrayDeque<Integer>();
+        p.isEmpty();
+        p.isEmpty();
+        p.isEmpty();
+        p.addFirst(3);
+        int item = p.removeFirst();
+    }
+
 
     }

@@ -52,21 +52,21 @@ public class ArrayDeque<T> {
 
     public T removeFirst(){
         cut();
-        size--;
         if(this.isEmpty()){
             return null;
         }
         nextFirst = (nextFirst + 1 )%items.length;
+        size--;
         return items[nextFirst];
     }
 
     public T removeLast(){
         cut();
-        size--;
         if(this.isEmpty()){
             return null;
         }
         nextLast = (nextLast - 1 + items.length) % items.length;
+        size--;
         return items[nextLast];
     }
 
