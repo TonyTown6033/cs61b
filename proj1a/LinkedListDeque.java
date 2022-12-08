@@ -1,5 +1,5 @@
 public class LinkedListDeque<T> {
-    public class Node{
+    private class Node{
         public T items;
         public Node before;
         public Node next;
@@ -23,15 +23,6 @@ public class LinkedListDeque<T> {
         size = 0;
     }
 
-    public LinkedListDeque(T x){
-        size = 1;
-        sentinel_head = new Node(null,null,null);
-        sentinel_tail = new Node(null,null,null);
-        first = new Node(x,sentinel_tail,sentinel_head);
-        sentinel_head.next = first;
-        sentinel_head.before = first;
-
-    }
     public void addFirst(T item){
         size += 1;
         Node ptr = sentinel_head.next;
@@ -71,6 +62,7 @@ public class LinkedListDeque<T> {
     }
 
     public T removeFirst(){
+        size--;
         if(this.isEmpty()){
             return null;
         }
@@ -84,6 +76,7 @@ public class LinkedListDeque<T> {
     }
 
     public T removeLast(){
+        size--;
         if(this.isEmpty()){
             return null;
         }
@@ -109,7 +102,7 @@ public class LinkedListDeque<T> {
         return ptr.items;
     }
 
-
+    /** there is some err
     public T getRecursive(int index){
         if(index < 0 || index >this.size()){
             return null;
@@ -120,7 +113,7 @@ public class LinkedListDeque<T> {
         return getRecursive(index-1);
     }
 
-
+    */
 
 
 }

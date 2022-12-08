@@ -1,6 +1,6 @@
 public class ArrayDeque<T> {
 
-    public T[] items;
+    private T[] items;
     private int nextFirst;
     private int nextLast;
     private int size;
@@ -56,9 +56,8 @@ public class ArrayDeque<T> {
         if(this.isEmpty()){
             return null;
         }
-        T backValue = items[nextFirst+1];
         nextFirst = (nextFirst + 1 )%items.length;
-        return backValue;
+        return items[nextFirst];
     }
 
     public T removeLast(){
@@ -67,9 +66,8 @@ public class ArrayDeque<T> {
         if(this.isEmpty()){
             return null;
         }
-        T backValue = items[nextLast];
         nextLast = (nextLast - 1 + items.length) % items.length;
-        return backValue;
+        return items[nextLast];
     }
 
     public T get(int index){
