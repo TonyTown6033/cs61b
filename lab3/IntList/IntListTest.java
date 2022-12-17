@@ -68,7 +68,10 @@ public class IntListTest {
 
     @Test
     public IntList testReverse(IntList A){
-        
+        IntList myList = IntList.of(0, 1, 2, 3);
+        IntList expected = IntList.of(3,2,1,0);
+        myList.reverse();
+        assertEquals(myList,expected);
     }
 
     /** If you're running this from the command line, you'll need
