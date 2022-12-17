@@ -3,13 +3,12 @@ public class OffByN implements CharacterComparator{
     public OffByN(int n){
         if(n<0 || n>25){
             System.out.println("ileagel inpurt n");
-            System.exit(0);
         }
         N = n;
     }
     public boolean equalChars(char x, char y) {
         int dif = x - y;
-        if( dif==N || dif == -N){
+        if( dif%32==N || dif%32 == -N){
             return true;
         }
         return false;
