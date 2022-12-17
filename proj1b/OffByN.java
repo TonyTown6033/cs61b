@@ -8,7 +8,7 @@ public class OffByN implements CharacterComparator{
     }
     public boolean equalChars(char x, char y) {
         int dif = x - y;
-        if( dif%32==N || dif%32 == -N){
+        if( (dif+N)%32==0 || (dif-N)%32 == 0){
             return true;
         }
         return false;
