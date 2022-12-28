@@ -31,6 +31,7 @@ public class TestPalindrome {
     public void testPalindromeOffOne(){
         assertTrue(palindrome.isPalindrome("flake",offByOne));
         assertTrue(palindrome.isPalindrome("mon",offByOne));
+        assertTrue(palindrome.isPalindrome("aceghfdb",offByOne));
         assertFalse(palindrome.isPalindrome("bird",offByOne));
         assertFalse(palindrome.isPalindrome("eletricity",offByOne));
     }
