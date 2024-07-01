@@ -16,7 +16,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     public Iterator<T> iterator() {
         return new RingIterator();
     }
-    private class RingIterator implements Iterator<T>{
+    private class RingIterator implements Iterator<T> {
         private int ptr;
         public RingIterator() {
             ptr = 0;
@@ -24,7 +24,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         public boolean hasNext() {
             return ptr < fillCount;
         }
-        public T next(){
+        public T next() {
             T returnValue = rb[first + ptr];
             ptr += 1;
             return returnValue;
