@@ -13,25 +13,25 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Array for storing the buffer data. */
     private T[] rb;
 
-    public Iterator<T> iterator(){
+    public Iterator<T> iterator() {
         return new RingIterator();
     }
     private class RingIterator implements Iterator<T>{
         private int ptr;
-        public RingIterator(){
+        public RingIterator() {
             ptr = 0;
         }
-        public boolean hasNext(){
+        public boolean hasNext() {
             return ptr < fillCount;
         }
         public T next(){
-            T returnValue = rb[first+ptr];
+            T returnValue = rb[first + ptr];
             ptr += 1;
             return returnValue;
         }
     }
-    private int addUpdate(int in){
-        return (in + 1)%capacity;
+    private int addUpdate(int in) {
+        return (in + 1) % capacity;
     }
 
 
@@ -49,7 +49,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         first = 0;
         last = 0;
         fillCount = 0;
-        rb =(T[]) new Object[capacity];
+        rb = (T[]) new Object[capacity];
     }
 
     /**
@@ -59,7 +59,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      */
     public void enqueue(T x) {
         // TODO: Enqueue the item. Don't forget to increase fillCount and update last.
-        if(isFull()){
+        if (isFull()) {
             throw new RuntimeException("Ring buffer overflow");
         }
 
@@ -76,7 +76,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      */
     public T dequeue() {
         // TODO: Dequeue the first item. Don't forget to decrease fillCount and update
-        if(isEmpty()){
+        if (isEmpty()) {
             throw new RuntimeException("Ring buffer underflow");
         }
         fillCount -= 1;
@@ -91,7 +91,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      */
     public T peek() {
         // TODO: Return the first item. None of your instance variables should change.
-        if(isEmpty()){
+        if (isEmpty()) {
             throw new RuntimeException("Ring buffer underflow");
         }
         return rb[first];
